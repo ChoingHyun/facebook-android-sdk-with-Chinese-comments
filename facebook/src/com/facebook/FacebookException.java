@@ -21,6 +21,7 @@
 package com.facebook;
 
 /**
+ * 没有单独放在exception包下，出于什么考虑
  * Represents an error condition specific to the Facebook SDK for Android.
  */
 public class FacebookException extends RuntimeException {

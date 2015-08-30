@@ -62,6 +62,9 @@ public final class FacebookSdk {
     private static final HashSet<LoggingBehavior> loggingBehaviors =
             new HashSet<LoggingBehavior>(Arrays.asList(LoggingBehavior.DEVELOPER_ERRORS));
     private static volatile Executor executor;
+    /**
+     * meta
+     */
     private static volatile String applicationId;
     private static volatile String applicationName;
     private static volatile String appClientToken;
@@ -140,6 +143,8 @@ public final class FacebookSdk {
     }
 
     /**
+     * 初始化时候调用
+     * 使用synchronnized修饰方法也很科学，加了线程锁，之前在设计的时候就没考虑到这个问题
      * This function initializes the Facebook SDK, the behavior of Facebook SDK functions are
      * undetermined if this function is not called. It should be called as early as possible.
      * @param applicationContext The application context
